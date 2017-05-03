@@ -49,35 +49,32 @@ function toPack(code) {
     _.choose(3, uncommon),
     _.choose(1, rare)
   )
-
-  if (code == 'SOI')
-  //http://markrosewater.tumblr.com/post/141794840953/if-the-as-fan-of-double-face-cards-is-1125-that
-    if (_.rand(8) == 0) {
-      size = size - 1
-      if (_.rand(15) < 3)
-        pack.push(_.choose(1, special.mythic))
-      else
-        pack.push(_.choose(1, special.rare))
-    }
-  if (code == 'EMN')
-    if (_.rand(8) == 0) {
-      size = size - 1
-      if (_.rand(5) < 1)
-        pack.push(_.choose(1, special.mythic))
-      else
-        pack.push(_.choose(1, special.rare))
-    }
+  
   let foilCard = false
   let specialrnd
   switch (code) {
     case 'EMN':
+      if (_.rand(8) == 0) {
+        size = size - 1
+      if (_.rand(5) < 1)
+        pack.push(_.choose(1, special.mythic))
+      else
+        pack.push(_.choose(1, special.rare))
+      }
       if (_.rand(2) < 1)
         special = special.uncommon
       else
         special = special.common
       break
-
     case 'SOI':
+      //http://markrosewater.tumblr.com/post/141794840953/if-the-as-fan-of-double-face-cards-is-1125-that
+      if (_.rand(8) == 0) {
+        size = size - 1
+      if (_.rand(15) < 3)
+        pack.push(_.choose(1, special.mythic))
+      else
+        pack.push(_.choose(1, special.rare))
+      }
       if (_.rand(106) < 38)
         special = special.uncommon
       else
@@ -89,17 +86,8 @@ function toPack(code) {
         : special.shock
       break
     case 'EMA':
-      special = selectRarity(set)
-      foilCard = true
-      break
     case 'MMA':
-      special = selectRarity(set)
-      foilCard = true
-      break
     case 'MM2':
-      special = selectRarity(set)
-      foilCard = true
-      break
     case 'MM3':
       special = selectRarity(set)
       foilCard = true
