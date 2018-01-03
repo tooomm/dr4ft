@@ -61,9 +61,9 @@ function content() {
   let setsFourTwo = d.div({}, sets.slice(2, 4))
 
   let cube = [
-    d.div({}, 'one card per line'),
+    d.div({}, 'Cube list:'),
     d.textarea({
-      placeholder: 'cube list',
+      placeholder: 'one card per line',
       valueLink: App.link('list')
     })
   ]
@@ -71,10 +71,10 @@ function content() {
   let cards = _.seq(15, 8).map(x => d.option({}, x))
   let packs = _.seq(12, 3).map(x => d.option({}, x))
   let cubeDraft = d.div({},
-    d.select({ valueLink: App.link('cards') }, cards),
-    ' cards ',
     d.select({ valueLink: App.link('packs') }, packs),
-    ' packs')
+    ' Packs  ')
+    d.select({ valueLink: App.link('cards') }, cards),
+    ' Cards',
   let chaos = d.div({})
   let fourPackBox = d.div({},RBox('fourPack', '4 Pack Sealed: '))
   let modernOnlyBox = d.div({},RBox('modernOnly', 'Only Modern Sets: '))
@@ -102,12 +102,12 @@ function Motd() {
 function ServerInfo() {
   let numUsers =
     `${App.state.numUsers}
-    ${App.state.numUsers === 1 ? 'user' : 'users'}
+    ${App.state.numUsers === 1 ? 'user' : 'Users'}
     connected`
 
   let numPlayers =
     `${App.state.numPlayers}
-    ${App.state.numPlayers === 1 ? 'player' : 'players'}
+    ${App.state.numPlayers === 1 ? 'player' : 'Players'}
     playing
     ${App.state.numActiveGames}
     ${App.state.numActiveGames === 1 ? 'game' : 'games'}`
