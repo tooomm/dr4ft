@@ -25,7 +25,7 @@ function Lands() {
   })
 
   let suggest = d.tr({},
-    d.td({}, 'deck size'),
+    d.td({}, 'Deck size '),
     d.td({}, d.input({
       className: 'number',
       min: 0,
@@ -36,11 +36,11 @@ function Lands() {
     d.td({ colSpan: 2 }, d.button({
       className: 'land-suggest-button',
       onClick: App._emit('resetLands')
-    }, 'reset lands')),
+    }, 'Reset lands')),
     d.td({ colSpan: 2 }, d.button({
       className: 'land-suggest-button',
       onClick: App._emit('suggestLands')
-    }, 'suggest lands')))
+    }, 'Suggest lands')))
 
   return d.fieldset({ className: 'land-controls fieldset' },
     d.legend({ className: 'legend game-legend' }, 'Lands'),

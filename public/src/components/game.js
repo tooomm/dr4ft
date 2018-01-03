@@ -72,10 +72,10 @@ export default React.createClass({
     if (App.state.type !== 'sealed' && App.state.type !== 'cube sealed') {
       startControls = d.div({},
         d.div({}, `Format: ${App.state.format}`),
-        LBox('addBots', 'bots'),
+        LBox('addBots', 'Bots'),
         d.div({},
           d.label({},
-            LBox('useTimer', 'timer: '),
+            LBox('useTimer', 'Timer: '),
             d.label({},
               d.select({
                 disabled: !App.state.useTimer,
@@ -99,11 +99,11 @@ export default React.createClass({
   Players() {
     let rows = App.state.players.map(row)
     let columns = [
-      d.th({}, '#'),
+      d.th({}, 'Seat'),
       d.th({}, ''), // connection status
-      d.th({}, 'name'),
-      d.th({}, 'packs'),
-      d.th({}, 'time'),
+      d.th({}, 'Name'),
+      d.th({}, 'Packs'),
+      d.th({}, 'Time'),
       d.th({}, 'cock'),
       d.th({}, 'mws'),
     ]
@@ -197,7 +197,7 @@ function row(p, i) {
     if (i !== self && !p.isBot)
       columns.push(d.td({}, d.button({
         onClick: ()=> App.send('kick', i),
-      }, 'kick')))
+      }, 'Kick')))
     else
       columns.push(d.td({}))
 
