@@ -58,7 +58,7 @@ export default React.createClass({
       type: 'text',
       ref: 'entry',
       onKeyDown: this.key,
-      placeholder: '/nick name'
+      placeholder: 'type "/nick YourName"'
     })
   },
 
