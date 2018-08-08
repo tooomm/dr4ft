@@ -12,7 +12,7 @@
     "jsonfile": "^2.4.0",
     "node-fetch": "^1.0.3",
     "send": "^0.11.1",
-    "traceur": "0.0.65",
+    "traceur": "0.0.111",
     "utils": "git://github.com/arxanas/utils"
   },
   "devDependencies": {
